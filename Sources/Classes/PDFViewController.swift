@@ -249,6 +249,7 @@ extension PDFViewController: PDFPageCollectionViewCellDelegate {
     }
     
     func handleSingleTap(_ cell: PDFPageCollectionViewCell, pdfPageView: PDFPageView) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didTapPDF"), object: nil)
         var shouldHide: Bool {
             guard let isNavigationBarHidden = navigationController?.isNavigationBarHidden else {
                 return false
